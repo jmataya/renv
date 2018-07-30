@@ -45,6 +45,23 @@ func TestFindEnvCurrentDir(t *testing.T) {
 	deleteFile(".env")
 }
 
+func TestFindEnvNestedDir(t *testing.T) {
+	createFile(".env", "MYVAR=Donkey")
+
+	cwd, _ := os.Getwd()
+	testPath := path.Join(cwd, "some/path")
+	os.MkdirAll(testPath, os.ModePerm)
+
+	want := path.Join(cwd, ".env")
+	envPath, err := FindEnv(testPath)
+	if err != nil || envPath != want {
+		t.Errorf("FindEnv(%s) = (%s, %v), want (%s, <nil>)", cwd, envPath, err, want)
+	}
+
+	deleteFile(".env")
+	deleteFile("some")
+}
+
 func TestFindEnvNoFile(t *testing.T) {
 	cwd, _ := os.Getwd()
 	want := ".env not found in project"
