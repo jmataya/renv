@@ -15,6 +15,26 @@ variables correctly.
 
 `go get github.com/jmataya/dotenv`
 
+## Usage
+
+### Specify an Environment File
+
+The most straightforward way to get started is to exactly specify the
+environment file you want to load.
+
+```golang
+package main
+
+import "github.com/jmataya/renv"
+
+func main() {
+        err := renv.LoadEnv("/path/to/env/file")
+        if err != nil {
+                // Do something...
+        }
+}
+```
+
 ## Authors
 
 * Jeff Mataya - [@jmataya](https://github.com/jmataya)
