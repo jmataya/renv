@@ -72,7 +72,7 @@ func main() {
 
 Jacques Fuentes [@jpfuentes2](https://github.com/jpfuentes2) has an excellent
 package called [go-env](https://github.com/jpfuentes2/go-env) that I've been
-referencing for years.
+referencing for years. Must of the code for this project is based on _go-env_.
 
 _renv_ grew out of a desire to take that same functionality and allow
 executables that may not be at a project root to leverage a project-wide .env
