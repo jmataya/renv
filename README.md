@@ -17,6 +17,15 @@ variables correctly.
 
 ## Usage
 
+### Autoload
+
+Autoloading based on your current working directory can work by importing the
+following:
+
+```golang
+import _ "github.com/jmataya/renv/autoload"
+```
+
 ### Load an Environment File
 
 The most straightforward way to get started is to exactly specify the
