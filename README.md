@@ -17,7 +17,7 @@ variables correctly.
 
 ## Usage
 
-### Specify an Environment File
+### Load an Environment File
 
 The most straightforward way to get started is to exactly specify the
 environment file you want to load.
@@ -29,6 +29,26 @@ import "github.com/jmataya/renv"
 
 func main() {
         err := renv.LoadEnv("/path/to/env/file")
+        if err != nil {
+                // Do something...
+        }
+}
+```
+
+### Find an Environment File
+
+In addition to specifying a specific environment file, _renv_ can search for a
+file based on a path. `FindEnv` will search recursively up from a specified
+folder to the root of the `$GOPATH`.
+
+```golang
+package main
+
+import "github.com/jmataya/renv"
+
+func main() {
+        envFile, _ := renv.FindEnv("/path/to/search/from")
+        err := renv.LoadEnv(envFile)
         if err != nil {
                 // Do something...
         }
