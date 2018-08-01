@@ -1,5 +1,10 @@
 # renv
 
+[![CircleCI](https://img.shields.io/circleci/project/github/jmataya/renv.svg)](https://circle.com/gh/jmataya/renv)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jmataya/renv)](https://goreportcard.com/report/github.com/jmataya/renv)
+[![Documentation](https://godoc.org/github.com/jmataya/renv?status.svg)](http://godoc.org/github.com/jmataya/renv)
+[![Coverage Status](https://coveralls.io/repos/github/jmataya/renv/badge.svg?branch=master)](https://coveralls.io/github/jmataya/renv?branch=master)
+
 Recursively find .env files in your current project and use them to populate
 you environment.
 
