@@ -76,7 +76,12 @@ func LoadEnv(file string) error {
 			return fmt.Errorf("Environment line %s is malformed - must be of format key=value", line)
 		}
 
-		os.Setenv(strings.TrimSpace(kvp[0]), strings.TrimSpace(kvp[1]))
+		key, value := strings.TrimSpace(kvp[0]), strings.TrimSpace(kvp[1])
+		if value[0] == '"' && value[len(value)-1] == '"' {
+			value = value[1 : len(value)-1]
+		}
+
+		os.Setenv(key, value)
 	}
 
 	return nil

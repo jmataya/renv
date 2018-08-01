@@ -150,6 +150,24 @@ func TestLoadEnvCommented(t *testing.T) {
 	deleteFile(".env")
 }
 
+func TestLoadEnvStripQuotes(t *testing.T) {
+	env := `FOO="test"`
+
+	os.Setenv("RENV", "development")
+
+	createFile(".env", env)
+	cwd, _ := os.Getwd()
+	envPath, _ := FindEnv(cwd)
+
+	if err := LoadEnv(envPath); err != nil {
+		t.Errorf("LoadEnv(%s) = %v, want <nil>", envPath, err)
+	} else if os.Getenv("FOO") != "test" {
+		t.Errorf("os.Getenv(\"FOO\") = %s, want test", os.Getenv("FOO"))
+	}
+
+	deleteFile(".env")
+}
+
 func TestLoadEnvInvalid(t *testing.T) {
 	env := `
 		FOO=test
