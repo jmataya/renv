@@ -1,0 +1,27 @@
+mode: count
+github.com/jmataya/renv/autoload/autoload.go:9.13,11.16 2 1
+github.com/jmataya/renv/autoload/autoload.go:15.2,16.16 2 1
+github.com/jmataya/renv/autoload/autoload.go:20.2,20.46 1 1
+github.com/jmataya/renv/autoload/autoload.go:11.16,12.13 1 0
+github.com/jmataya/renv/autoload/autoload.go:16.16,17.13 1 0
+github.com/jmataya/renv/autoload/autoload.go:20.46,21.13 1 0
+github.com/jmataya/renv/renv.go:30.46,34.46 3 20
+github.com/jmataya/renv/renv.go:38.2,39.48 2 20
+github.com/jmataya/renv/renv.go:57.2,57.25 1 6
+github.com/jmataya/renv/renv.go:34.46,36.3 1 8
+github.com/jmataya/renv/renv.go:39.48,40.25 1 14
+github.com/jmataya/renv/renv.go:54.3,54.17 1 0
+github.com/jmataya/renv/renv.go:40.25,44.18 4 14
+github.com/jmataya/renv/renv.go:48.4,48.29 1 14
+github.com/jmataya/renv/renv.go:52.4,52.61 1 2
+github.com/jmataya/renv/renv.go:44.18,46.5 1 0
+github.com/jmataya/renv/renv.go:48.29,50.5 1 12
+github.com/jmataya/renv/renv.go:62.33,64.16 2 4
+github.com/jmataya/renv/renv.go:68.2,68.67 1 3
+github.com/jmataya/renv/renv.go:82.2,82.12 1 2
+github.com/jmataya/renv/renv.go:64.16,66.3 1 1
+github.com/jmataya/renv/renv.go:68.67,70.53 2 10
+github.com/jmataya/renv/renv.go:74.3,75.20 2 4
+github.com/jmataya/renv/renv.go:79.3,79.66 1 3
+github.com/jmataya/renv/renv.go:70.53,71.12 1 6
+github.com/jmataya/renv/renv.go:75.20,77.4 1 1

@@ -172,3 +172,18 @@ func TestLoadEnvInvalid(t *testing.T) {
 
 	deleteFile(".env")
 }
+
+func TestLoadEnvFileNotFound(t *testing.T) {
+	os.Setenv("RENV", "development")
+
+	cwd, _ := os.Getwd()
+	envPath := path.Join(cwd, ".env")
+
+	want := fmt.Sprintf("open %s: no such file or directory", envPath)
+
+	if err := LoadEnv(envPath); err == nil || err.Error() != want {
+		t.Errorf("LoadEnv(%s) = %v, want %s", envPath, err, want)
+	} else if os.Getenv("FOO") != "test" {
+		t.Errorf("os.Getenv(\"FOO\") = %s, want test", os.Getenv("FOO"))
+	}
+}
