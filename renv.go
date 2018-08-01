@@ -65,8 +65,9 @@ func LoadEnv(file string) error {
 		return err
 	}
 
-	for _, line := range strings.Split(string(content), "\n") {
-		if strings.HasPrefix(line, "#") || len(line) == 0 {
+	for _, contentLine := range strings.Split(string(content), "\n") {
+		line := strings.TrimSpace(contentLine)
+		if len(line) == 0 || strings.HasPrefix(line, "#") {
 			continue
 		}
 
