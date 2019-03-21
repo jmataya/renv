@@ -168,6 +168,22 @@ func TestLoadEnvStripQuotes(t *testing.T) {
 	deleteFile(".env")
 }
 
+func TestLoadEmptyValue(t *testing.T) {
+	env := `FOO=`
+
+	os.Setenv("RENV", "development")
+
+	createFile(".env", env)
+	cwd, _ := os.Getwd()
+	envPath, _ := FindEnv(cwd)
+
+	if err := LoadEnv(envPath); err != nil {
+		t.Errorf("LoadEnv(%s) = %v, want <nil>", envPath, err)
+	}
+
+	deleteFile(".env")
+}
+
 func TestLoadEnvInvalid(t *testing.T) {
 	env := `
 		FOO=test

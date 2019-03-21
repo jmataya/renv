@@ -77,6 +77,10 @@ func LoadEnv(file string) error {
 		}
 
 		key, value := strings.TrimSpace(kvp[0]), strings.TrimSpace(kvp[1])
+		if len(value) == 0 {
+			continue
+		}
+
 		if value[0] == '"' && value[len(value)-1] == '"' {
 			value = value[1 : len(value)-1]
 		}
